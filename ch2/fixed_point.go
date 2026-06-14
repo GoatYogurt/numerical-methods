@@ -12,13 +12,12 @@ func Fixed_point(p0 float64, g func(float64) float64, TOL float64, N int) {
 	for i <= N {
 		p = g(p0)
 		if math.Abs(p - p0) < TOL {
-			fmt.Printf("Root: %f. Iterations: %d.\n", p, i)
+			fmt.Printf("Succeeded. Root: %f. Iterations: %d.\n", p, i)
 			return
 		}
 		i += 1
 		p0 = p
 	}
 
-	fmt.Printf("Root: %f. Iterations: %d.\n", p, i)
-	return
+	fmt.Printf("Failed. Root: %f. Iterations: %d.\n", p, i)
 }

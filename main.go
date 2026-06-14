@@ -7,12 +7,19 @@ import (
 )
 
 func main() {
-	// newton
+	// secant
 	f := func(x float64) float64 {
 		return math.Cos(x) - x
 	}
 
-	ch2.Newton(math.Pi/4, f, 1e-5, 10)
+	ch2.Secant(0.5, math.Pi/4, f, 1e-5, 10)
+
+	// newton
+	// f := func(x float64) float64 {
+	// 	return math.Cos(x) - x
+	// }
+
+	// ch2.Newton(math.Pi/4, f, 1e-5, 10)
 
 	// bisection
 	// f := func(x float64) float64 {
