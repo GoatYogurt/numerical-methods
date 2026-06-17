@@ -1,21 +1,36 @@
 package main
 
 import (
-	"math"
-
-	"ppt/ch2"
+	// "math"
+	// "ppt/ch2"
+	"ppt/ch3"
 )
 
 func main() {
-	TOL := 1e-8
-	N0 := 20
-	f := func(x float64) float64 {
-		return math.Cos(x) - x
-	}
+	augMatrix := [][]float64{
+    {4, 1, -1, 0, 2, 0, 1, 0, -1, 3, 9},
+    {-1, 5, 2, 1, 0, -1, 0, 3, 1, 0, 11},
+    {2, -1, 6, 0, -1, 2, 0, 1, 0, -1, 8},
+    {0, 1, 0, 4, 1, 0, -2, 1, 3, 1, 9},
+    {1, 0, 3, -1, 5, 1, 0, -1, 2, 0, 11},
+    {0, 2, -1, 1, 0, 6, 1, 0, -3, 1, 8},
+    {3, 0, 1, -1, 2, 0, 4, 1, 0, -1, 9},
+    {1, -2, 0, 3, 0, 1, -1, 5, 1, 2, 11},
+    {-1, 1, 2, 0, -3, 1, 1, 0, 4, 1, 7},
+    {2, 0, -1, 1, 1, -1, 0, 3, 0, 5, 11},
+}
 
-	ch2.False_position(0.5, math.Pi/4, f, TOL, N0)
-	ch2.Secant(0.5, math.Pi/4, f, TOL, N0)
-	ch2.Newton(math.Pi/4, f, TOL, N0)
+	ch3.Gauss(10, augMatrix)
+	
+	// TOL := 1e-8
+	// N0 := 20
+	// f := func(x float64) float64 {
+	// 	return math.Cos(x) - x
+	// }
+
+	// ch2.False_position(0.5, math.Pi/4, f, TOL, N0)
+	// ch2.Secant(0.5, math.Pi/4, f, TOL, N0)
+	// ch2.Newton(math.Pi/4, f, TOL, N0)
 
 	// bisection
 	// f := func(x float64) float64 {
