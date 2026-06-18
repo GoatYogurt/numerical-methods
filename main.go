@@ -1,15 +1,31 @@
 package main
 
 import (
-	"fmt"
-	"ppt/ch4"
+	// "fmt"
+	// "math"
+	"ppt/ch7"
 )
 
 func main() {
-	fmt.Println(ch4.NaturalSpline(
-		[]float64{1,2,3},
-		[]float64{2,3,5},
-	))
+	ch7.Euler(
+		0.0,
+		2.0,
+		10,
+		0.5,
+		func(t, y float64) float64 {
+			return y - t*t + 1
+		},
+	)
+	
+	// fmt.Println(ch4.NaturalSpline(
+	// 	[]float64{1,2,3},
+	// 	[]float64{2,3,5},
+	// ))
+
+	// fmt.Println(ch4.NaturalSpline(
+	// 	[]float64{0,1,2,3},
+	// 	[]float64{1,math.E, math.E*math.E, math.E*math.E*math.E},
+	// ))
 	
 	
 	// fmt.Println(ch4.Newton(
