@@ -6,10 +6,16 @@ import (
 )
 
 func main() {
-	fmt.Println(ch4.Newton(
-        []float64{1.0, 1.3, 1.6, 1.9, 2.2},
-        []float64{0.7651977, 0.6200860, 0.4554022, 0.2818186, 0.1103623},
-    ))
+	fmt.Println(ch4.NaturalSpline(
+		[]float64{1,2,3},
+		[]float64{2,3,5},
+	))
+	
+	
+	// fmt.Println(ch4.Newton(
+    //     []float64{1.0, 1.3, 1.6, 1.9, 2.2},
+    //     []float64{0.7651977, 0.6200860, 0.4554022, 0.2818186, 0.1103623},
+    // ))
 
 
 	// f := func (x float64) float64 {
