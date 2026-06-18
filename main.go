@@ -6,17 +6,23 @@ import (
 )
 
 func main() {
-	f := func (x float64) float64 {
-		return 1/x
-	}
+	fmt.Println(ch4.Newton(
+        []float64{1.0, 1.3, 1.6, 1.9, 2.2},
+        []float64{0.7651977, 0.6200860, 0.4554022, 0.2818186, 0.1103623},
+    ))
+
+
+	// f := func (x float64) float64 {
+	// 	return 1/x
+	// }
 
 	// fmt.Println(ch4.LinearLagrange(5,2,4,5,1))
-	fmt.Println(ch4.GeneralLagrange(
-		3,
-		[]float64 {2, 2.75, 4},
-		[]float64{f(2), f(2.75), f(4)},
-		),
-	)
+	// fmt.Println(ch4.GeneralLagrange(
+	// 	3,
+	// 	[]float64 {2, 2.75, 4},
+	// 	[]float64{f(2), f(2.75), f(4)},
+	// 	),
+	// )
 
 	// ch3.Gauss_seidel(
 	// 	4, 
