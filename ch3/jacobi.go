@@ -2,23 +2,8 @@ package ch3
 
 import (
 	"fmt"
-	"math"
+	"ppt/utils"
 )
-
-func EuclideanDistance(x, x0 []float64) float64 {
-	if len(x) != len(x0) {
-		panic("Two sclices must have same lengths.")
-	}
-
-	sumOfSquares := 0.0
-
-	for i := 0; i < len(x); i++ {
-		diff := x[i] - x0[i]
-		sumOfSquares += diff * diff
-	}
-
-	return math.Sqrt(sumOfSquares)
-}
 
 func Jacobi(n int, a [][]float64, b []float64, x0 []float64, TOL float64, N int) {
 	x := make([]float64, n)
@@ -33,7 +18,7 @@ func Jacobi(n int, a [][]float64, b []float64, x0 []float64, TOL float64, N int)
 			x[i] = 1/a[i][i] * (b[i] - sum)
 		}
 
-		if EuclideanDistance(x, x0) < TOL {
+		if utils.EuclideanDistance(x, x0) < TOL {
 			fmt.Printf("Roots: %v. Iterations: %d.\n", x, k)
 			return
 		}

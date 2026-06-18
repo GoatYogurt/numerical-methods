@@ -1,12 +1,24 @@
 package main
 
 import (
-	// "math"
-	// "ppt/ch2"
 	"ppt/ch3"
 )
 
 func main() {
+	ch3.Gauss_seidel(
+		4, 
+		[][]float64{
+			{10,-1,2,0},
+			{-1,11,-1,3},
+			{2,-1,10,-1},
+			{0,3,-1,8},
+		},
+		[]float64{6,25,-11,15},
+		[]float64{0,0,0,0},
+		1e-3,
+		100,
+	)
+
 	ch3.Jacobi(
 		4, 
 		[][]float64{
@@ -17,7 +29,7 @@ func main() {
 		},
 		[]float64{6,25,-11,15},
 		[]float64{0,0,0,0},
-		1e-2,
+		1e-3,
 		11,
 	)
 	
