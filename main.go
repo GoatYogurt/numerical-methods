@@ -1,21 +1,50 @@
 package main
 
 import (
-	// "fmt"
+	"fmt"
 	// "math"
 	"ppt/ch7"
 )
 
 func main() {
-	ch7.Euler(
-		0.0,
-		2.0,
-		10,
-		0.5,
-		func(t, y float64) float64 {
-			return y - t*t + 1
-		},
-	)
+	f := func(t float64, y float64) float64 {
+		return y - t*t + 1.0
+	}
+
+	fmt.Println(ch7.Heun(0.0, 2.0, 10, 0.5, f))
+	ch7.RungeKutta4(0.0, 2.0, 10, 0.5, f)
+
+
+	// points := ch7.Midpoint(0.0, 2.0, 10, 0.5, f)
+
+	// for idx, p := range points {
+	// 	fmt.Printf("Bước %d -> t = %.1f, y = %.4f\n", idx, p.T, p.W)
+	// }
+	
+	
+	// // Định nghĩa hàm vế phải f(t, y) = y - t^2 + 1
+	// f := func(t float64, y float64) float64 {
+	// 	return y - t*t + 1.0
+	// }
+
+	// // Các thông số đầu vào từ sách:
+	// a := 0.0      // Điểm đầu
+	// b := 2.0      // Điểm cuối
+	// N := 10       // Số khoảng chia (N = 10 thì h = 0.2)
+	// alpha := 0.5  // Điều kiện ban đầu y(0) = 0.5
+
+	// // Chạy thuật toán Runge-Kutta 4
+	// ch7.RungeKutta4(a, b, N, alpha, f)
+	
+	// ch7.Euler(
+	// 	0.0,
+	// 	2.0,
+	// 	10,
+	// 	0.5,
+	// 	func(t, y float64) float64 {
+	// 		return y - t*t + 1
+	// 	},
+	// )
 	
 	// fmt.Println(ch4.NaturalSpline(
 	// 	[]float64{1,2,3},
