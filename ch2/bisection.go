@@ -23,5 +23,6 @@ func Bisection(start float64, end float64, f func(float64) float64, TOL float64,
 			end = p
 		}
 	}
+	
 	return math.NaN()
 }
